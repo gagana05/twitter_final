@@ -1,1 +1,1 @@
-worker: pyhton main_bot.py
+worker: pyhton main_bot.py     #says to deploy code
