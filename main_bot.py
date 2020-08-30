@@ -1,4 +1,4 @@
-import tweepy
+import tweepy #python library to access twitter API 
 import os # operating system library
 
 def create_api():
@@ -7,6 +7,7 @@ def create_api():
   access_token = os.getenv('access_token')
   access_token_secret = os.getenv('access_token_secret')
 
+  #default syntax for tweepy library, required for tweepy code
   auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
   auth.set_access_token(access_token, access_token_secret)
 
@@ -22,7 +23,7 @@ def follower_count(user):
   emoji_numbers =  {0: "0️⃣", 1: "1️⃣", 2: "2️⃣", 3: "3️⃣",
                       4: "4️⃣", 5: "5️⃣", 6: "6️⃣", 7: "7️⃣", 8: "8️⃣", 9: "9️⃣"}
 
-  uf_split = [int(i) for i in str(user.followers_count)]# Used to seperate 
+  uf_split = [int(i) for i in str(user.followers_count)]# Used to seperate and print numbers 
 
   emoji_followers = ''.join([emoji_numbers[j] for j in uf_split if j in emoji_numbers.keys()]) 
   return emoji_followers
@@ -34,5 +35,5 @@ while True:
     api.update_profile(name=f'Gagana|{follower_count(user)} Followers')
     print(f'Updating Twitter Name : Gagana|{follower_count(user)} Followers')
     print('Waiting to refresh')
-    time.sleep(60)
+    time.sleep(60) #delay to access API keys
              
