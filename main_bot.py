@@ -36,5 +36,5 @@ while True:
     print(f'Updating Twitter Name : Gagana|{follower_count(user)} Followers')
     print('Waiting to refresh')
     time.sleep(60) #delay to access API keys
-             
+                       
         
